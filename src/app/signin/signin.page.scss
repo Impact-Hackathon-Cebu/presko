@@ -1,0 +1,55 @@
+.logo {
+  margin-top: 10%;
+  max-width: 35%;
+}
+
+.title {
+  width: 90%;
+  text-align: center;
+  font-size: 3em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title1 {
+  color: #229e04;
+  margin: 0;
+}
+
+.title2 {
+  color: #eea4a1;
+  margin: 0;
+}
+
+h1 {
+  color: #eea4a1;
+  font-weight: bold;
+  font-size: 1.6em;
+}
+
+ion-item {
+  width: 70%;
+}
+
+ion-button {
+  padding-top: 5%;
+}
+
+.btn {
+  font-family: sans-serif;
+  font-size: 14pt;
+  text-transform: lowercase;
+}
+
+.round {
+  width: 9rem;
+  height: 4.5rem;
+  vertical-align: middle;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.spacer {
+  padding: 2%;
+}

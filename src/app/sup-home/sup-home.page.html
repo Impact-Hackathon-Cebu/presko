@@ -1,0 +1,113 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>sup-home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+  <ion-card>
+
+    <img src="../../assets/images/cabbage.png"/>
+
+    <ion-item>
+        <ion-icon name="clipboard" slot="start"></ion-icon>
+        <ion-label> Cabbage </ion-label>
+    </ion-item>
+    
+    <ion-item>
+        <ion-icon name="clock" slot="start"></ion-icon>
+        <ion-label> 1:12 </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-icon name="pin" slot="start"></ion-icon>
+      <ion-label> Dalaguete, Cebu</ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon name="walk" slot="start"></ion-icon>
+      <ion-label>Carbon Market</ion-label>
+    </ion-item>
+  
+    <ion-item >
+        <ion-icon name="man" slot="start"></ion-icon>
+        <ion-label>Hiroshi Bombay</ion-label>
+      </ion-item>
+
+    <ion-item href="#" class="active">
+      <ion-icon name="cart" slot="start"></ion-icon>
+      <ion-label>$ 25,000</ion-label>
+      <ion-button fill="outline" slot="end"> BUY </ion-button>
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>
+-->
+
+
+<ion-content>
+  <ion-grid>
+
+    <ion-row lass="ion-justify-content-center">
+      <ion-list class="item-list">
+
+        <ion-item-sliding>
+          <ion-item>
+            <ion-label color="primary">
+              <h3>Petchay</h3>
+              <h4>Natalco</h4>
+              <h5>Status: <ion-icon name="checkmark-circle" color="success"></ion-icon>
+              </h5>
+            </ion-label>
+            <ion-text>
+              <p>52$</p>
+              <p>Stock left: 21</p>
+            </ion-text>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option (click)="removePersonnel(i)" color="dark">
+              <ion-icon name="create"></ion-icon>
+            </ion-item-option>
+            <ion-item-option (click)="removePersonnel(i)" color="danger">
+              <ion-icon name="trash"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+
+
+        <ion-item-sliding *ngFor="let product of (products | async)" [routerLink]="['/sup-add', product.id]">
+            <ion-item>
+              <ion-label color="primary">
+                <h3>{{ product.name }}</h3>
+                <h4>{{ product.supplierName }}</h4>
+              </ion-label>
+              <ion-text>
+                <p>{{ product.price }}</p>
+                <p>Stock left: {{ product.stock }}</p>
+              </ion-text>
+            </ion-item>
+  
+            <ion-item-options side="end">
+              <ion-item-option (click)="deleteProduct(i)" color="danger">
+                <ion-icon name="trash"></ion-icon>
+              </ion-item-option>
+            </ion-item-options>
+          </ion-item-sliding>
+
+        
+
+      </ion-list>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add" [routerLink]="['/sup-add']"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
